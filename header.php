@@ -2,9 +2,9 @@
 
 session_start();
 include 'admin/config.php';
-if (!isset($_SESSION['username'])) {
-    header("Location: {$hostname}/admin/");
-}
+// if (!isset($_SESSION['username'])) {
+//     header("Location: {$hostname}/admin/");
+// }
 $cid = isset($_GET['cid']) ? $_GET['cid'] : 'all';
 $query = "SELECT * FROM category where post != 0";
 $result = mysqli_query($conn, $query);
