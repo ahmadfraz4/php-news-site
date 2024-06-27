@@ -27,11 +27,13 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `category`
 --
+create database `news-app`;
+use `news-app`;
 
 CREATE TABLE `category` (
-  `category_id` int(11) NOT NULL,
-  `category_name` varchar(100) NOT NULL,
-  `post` int(11) NOT NULL DEFAULT 0
+  category_id int(11) NOT NULL,
+  category_name varchar(100) NOT NULL,
+  post int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -41,13 +43,13 @@ CREATE TABLE `category` (
 --
 
 CREATE TABLE `post` (
-  `post_id` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `category` varchar(100) NOT NULL,
-  `post_date` varchar(50) NOT NULL,
-  `author` int(11) NOT NULL,
-  `post_img` varchar(100) NOT NULL
+  post_id int(11) NOT NULL,
+  title varchar(100) NOT NULL,
+  description text NOT NULL,
+  category varchar(100) NOT NULL,
+  post_date varchar(50) NOT NULL,
+  author int(11) NOT NULL,
+  post_img varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -57,12 +59,12 @@ CREATE TABLE `post` (
 --
 
 CREATE TABLE `user` (
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `first_name` varchar(30) NOT NULL,
-  `last_name` varchar(30) NOT NULL,
-  `username` varchar(30) DEFAULT NULL,
-  `password` varchar(40) DEFAULT NULL,
-  `role` int(11) NOT NULL
+  user_id int(10) UNSIGNED NOT NULL,
+  first_name varchar(30) NOT NULL,
+  last_name varchar(30) NOT NULL,
+  username varchar(30) DEFAULT NULL,
+  password varchar(40) DEFAULT NULL,
+  role int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -114,3 +116,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO `post` (post_id, title, description, category, post_date, author, post_img) VALUES (NULL, 'Match', 'Pakistan loss matches', 'Sports', '6-6-2023', '1', 'abc.png');
